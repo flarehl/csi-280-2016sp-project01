@@ -20,10 +20,17 @@ var ClassRepo = exports.ClassRepo = function() {
   });
 }
 
-ClassRepo.prototype.findById = function(id) {
-  // TODO: find a class by its id
+ClassRepo.prototype.findById = function(id) {	j = -1;
+	for(i = 0; i < this.classList.length; i++){
+  		if (this.classList[i].id == id){
+  			j = i;
+  			break;
+  		}
+	}
+	return this.classList[j];
+  
 }
 
 ClassRepo.prototype.add = function(myClass) {
-  // TODO: add a class to the repository
+  this.classList.push(myClass);
 }
